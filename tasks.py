@@ -4,9 +4,10 @@ tasks = []
 
 
 def add_task(title):
+    if not title or not title.strip():
+        raise ValueError("Название задачи не может быть пустым")
     tasks.append({"title": title, "done": False})
     print(f"Задача добавлена: {title}")
-
 
 def list_tasks():
     if not tasks:
